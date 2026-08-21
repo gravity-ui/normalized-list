@@ -1,6 +1,6 @@
 {
   "name": "@gravity-ui/normalized-list",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Normalized flat/tree list model and React list/select components",
   "license": "MIT",
   "main": "./build/cjs/index.js",
