@@ -21,6 +21,7 @@ import type {
     NormalizedSelectRenderErrorProps,
     NormalizedSelectRenderPopupProps,
 } from './types';
+import {getSelectedOptionsContent} from './utils/getSelectedOptionsContent';
 
 import './NormalizedSelect.scss';
 
@@ -197,14 +198,10 @@ export const NormalizedSelect = React.forwardRef(function NormalizedSelect<T, P 
     ) : (
         <FallbackNormalizedSelectControl
             {...controlProps}
-            selectedOptionsContent={value
-                .map((itemId) =>
-                    itemId in list.structure.itemsById
-                        ? mapItemDataToContentProps(list.structure.itemsById[itemId]).title
-                        : '',
-                )
-                .filter(Boolean)
-                .join(', ')}
+            selectedOptionsContent={getSelectedOptionsContent(
+                {list, value},
+                mapItemDataToContentProps,
+            )}
         />
     );
 
