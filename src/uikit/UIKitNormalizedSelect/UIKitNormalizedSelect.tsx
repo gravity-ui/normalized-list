@@ -59,7 +59,7 @@ export const UIKitNormalizedSelect = React.forwardRef(function UIKitNormalizedSe
     const renderError =
         propsRenderError ??
         (({errorMessage, errorMessageId}: NormalizedSelectRenderErrorProps) => (
-            <Flex spacing={{mt: 0.5}}>
+            <Flex marginBlockStart="spacing-half">
                 <Text id={errorMessageId} color="danger" variant="body-1">
                     {errorMessage}
                 </Text>

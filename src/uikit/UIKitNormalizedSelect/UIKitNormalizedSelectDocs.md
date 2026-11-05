@@ -2,7 +2,7 @@
 
 [`NormalizedSelect`](/docs/normalized-list-normalizedselect--docs) with `@gravity-ui/uikit` defaults for control, popup, list item ([`UIKitListItemView`](/docs/normalized-list-uikit-uikitlistitemview--docs)), and outside error text.
 
-Requires `@gravity-ui/uikit` and `@gravity-ui/icons`.
+Requires `@gravity-ui/uikit@^8.0.0`, React 18 or 19 (`react` and `react-dom`), `@gravity-ui/icons`, and `@floating-ui/react`.
 
 There are many usage patterns for this component — see the Storybook stories alongside these docs.
 

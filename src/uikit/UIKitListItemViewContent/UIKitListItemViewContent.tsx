@@ -11,7 +11,7 @@ interface SlotProps extends FlexProps {
 
 const ListItemViewSlot = ({children, indentation = 1, ...props}: SlotProps) => {
     return (
-        <Flex width={indentation * 16} shrink={0} {...props}>
+        <Flex width={`${indentation * 16}px`} flexShrink={0} {...props}>
             {children}
         </Flex>
     );
@@ -55,8 +55,14 @@ export const UIKitListItemViewContent = ({
     ) : null;
 
     return (
-        <Flex alignItems="center" justifyContent="space-between" gap={4} width="100%" height="100%">
-            <Flex gap={2} alignItems="center" grow style={{minWidth: 0}}>
+        <Flex
+            alignItems="center"
+            justifyContent="space-between"
+            gap="spacing-4"
+            width="100%"
+            height="100%"
+        >
+            <Flex gap="spacing-2" alignItems="center" flexGrow style={{minWidth: 0}}>
                 {hasSelectionIcon && (
                     <ListItemViewSlot>
                         {selected ? (
@@ -71,7 +77,7 @@ export const UIKitListItemViewContent = ({
 
                 {startSlot}
 
-                <Flex direction="column" grow style={{minWidth: 0, gap: 2}}>
+                <Flex direction="column" flexGrow style={{minWidth: 0, gap: 2}}>
                     {typeof title === 'string' ? (
                         <Text
                             ellipsis
@@ -93,7 +99,7 @@ export const UIKitListItemViewContent = ({
                 </Flex>
             </Flex>
 
-            <Flex gap={2} shrink={0}>
+            <Flex gap="spacing-2" flexShrink={0}>
                 {expandIconPlacement === 'end' && expandIconNode}
                 {endSlot}
             </Flex>

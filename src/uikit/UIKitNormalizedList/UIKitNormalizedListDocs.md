@@ -2,7 +2,7 @@
 
 [`NormalizedList`](/docs/normalized-list-normalizedlist--docs) with default `renderItem` set to [`UIKitListItemView`](/docs/normalized-list-uikit-uikitlistitemview--docs) (list row themed for `@gravity-ui/uikit`).
 
-Requires `@gravity-ui/uikit` and `@gravity-ui/icons`.
+Requires `@gravity-ui/uikit@^8.0.0`, React 18 or 19 (`react` and `react-dom`), `@gravity-ui/icons`, and `@floating-ui/react`.
 
 There are many usage patterns for this component — see the Storybook stories alongside these docs.
 

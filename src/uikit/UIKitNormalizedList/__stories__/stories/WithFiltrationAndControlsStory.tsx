@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import {Button, Flex, Text, TextInput, spacing} from '@gravity-ui/uikit';
+import {Button, Flex, Text, TextInput} from '@gravity-ui/uikit';
 
 import {
     ListContainer,
@@ -34,7 +34,13 @@ export const WithFiltrationAndControlsStory = ({
         const containerRenderer = (props: NormalizedListContainerProps<Entity>) => {
             if (props.list.structure.items.length === 0 && baseItems.length > 0) {
                 return (
-                    <Flex centerContent className={spacing({p: 2})} height="300px">
+                    <Flex
+                        alignItems="center"
+                        justifyContent="center"
+                        padding="spacing-2"
+                        height="300px"
+                        style={{boxSizing: 'border-box'}}
+                    >
                         <Text variant="subheader-1">Nothing found</Text>
                     </Flex>
                 );
@@ -51,12 +57,15 @@ export const WithFiltrationAndControlsStory = ({
     const list = useNormalizedList({items: filterState.items});
 
     return (
-        <Flex direction="column" gap={3}>
+        <Flex direction="column" gap="spacing-3">
             <TextInput
                 hasClear
                 placeholder="Type for search..."
-                className={spacing({px: 2, py: 1})}
-                style={{boxSizing: 'border-box'}}
+                style={{
+                    boxSizing: 'border-box',
+                    paddingInline: 'var(--g-spacing-2)',
+                    paddingBlock: 'var(--g-spacing-1)',
+                }}
                 autoComplete="off"
                 value={filterState.filter}
                 onUpdate={filterState.onFilterUpdate}
@@ -68,7 +77,7 @@ export const WithFiltrationAndControlsStory = ({
                 mapItemDataToContentProps={(item) => item}
                 renderContainer={renderContainer}
             />
-            <Flex gap={2} className={spacing({px: 2, py: 1})}>
+            <Flex gap="spacing-2" paddingInline="spacing-2" paddingBlock="spacing-1">
                 <Button
                     width="max"
                     onClick={() => {

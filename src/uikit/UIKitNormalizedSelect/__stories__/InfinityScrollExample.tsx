@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import {Flex, Label, Loader, spacing} from '@gravity-ui/uikit';
+import {Flex, Label, Loader} from '@gravity-ui/uikit';
 
 import type {NormalizedListOnItemClick} from '../../../components/NormalizedList/types';
 import {getListItemClickHandler} from '../../../components/useNormalizedList';
@@ -132,7 +132,7 @@ export const InfinityScrollExample = ({
                 onUpdate={setValue}
                 slotAfterListBody={
                     isLoading && (
-                        <Flex justifyContent="center" className={spacing({py: 2})}>
+                        <Flex justifyContent="center" paddingBlock="spacing-2">
                             <Loader size="m" />
                         </Flex>
                     )
