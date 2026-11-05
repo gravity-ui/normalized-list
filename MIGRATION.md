@@ -18,7 +18,9 @@ Install:
 npm install @gravity-ui/normalized-list
 ```
 
-Peers for the UIKit entry: `@gravity-ui/uikit`, `@gravity-ui/icons`, and `@floating-ui/react`. Installing `@gravity-ui/uikit` is usually enough (it already depends on the other two). With strict package managers such as pnpm, install `@gravity-ui/icons` and `@floating-ui/react` explicitly if they do not resolve.
+The UIKit entry requires `@gravity-ui/uikit@^8.0.0` and React 18 or 19 (both `react` and `react-dom`). If migrating from UIKit 7, upgrade these dependencies before using the UIKit presets. The core entry keeps its existing React peer range: `^16.14.0 || ^17.0.0 || ^18.0.0 || ^19.0.0`.
+
+Additional peers for the UIKit entry: `@gravity-ui/icons` and `@floating-ui/react`. Installing `@gravity-ui/uikit` is usually enough (it already depends on the other two). With strict package managers such as pnpm, install `@gravity-ui/icons` and `@floating-ui/react` explicitly if they do not resolve.
 
 CSS namespace changed to `g-nl-` (for example `--g-nl-list-item-background-hover`). Update any overrides that targeted the old list classes / variables.
 
@@ -127,7 +129,7 @@ const items: ListItemType<string>[] = ['one', 'two', 'free', 'four', 'five'];
 />;
 ```
 
-Requires a `MobileProvider` (or equivalent) from `@gravity-ui/uikit` so `useMobile()` returns the correct value.
+Wrap the application in `Provider` from `@gravity-ui/uikit` and pass the appropriate `mobile` value so `useMobile()` returns the correct value.
 
 ### QA / `data-qa`
 

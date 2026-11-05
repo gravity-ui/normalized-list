@@ -35,11 +35,11 @@ export const ErrorStateExample = (props: ErrorStateExampleProps) => {
     };
 
     return (
-        <Flex gap={5}>
-            <Flex direction="column" gap={3} width={300}>
+        <Flex gap="spacing-5">
+            <Flex direction="column" gap="spacing-3" width="300px">
                 <UIKitNormalizedSelect {...sharedProps} errorPlacement="outside" />
             </Flex>
-            <Flex direction="column" gap={3} width={300}>
+            <Flex direction="column" gap="spacing-3" width="300px">
                 <UIKitNormalizedSelect {...sharedProps} errorPlacement="inside" />
             </Flex>
         </Flex>

@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import {Button, Flex, Text, TextInput, spacing} from '@gravity-ui/uikit';
+import {Button, Flex, Text, TextInput} from '@gravity-ui/uikit';
 
 import {ListContainer, useListFilter} from '../../../components/useNormalizedList';
 import {createRandomizedData} from '../../../components/useNormalizedList/__stories__/utils/makeData';
@@ -41,7 +41,13 @@ export const WithFiltrationAndControlsExample = ({
         const containerRenderer: NormalizedSelectRenderContainer<Entity> = (props) => {
             if (props.list.structure.items.length === 0 && baseItems.length > 0) {
                 return (
-                    <Flex centerContent className={spacing({p: 2})} height="300px">
+                    <Flex
+                        alignItems="center"
+                        justifyContent="center"
+                        padding="spacing-2"
+                        height="300px"
+                        style={{boxSizing: 'border-box'}}
+                    >
                         <Text variant="subheader-1">Nothing found</Text>
                     </Flex>
                 );
@@ -70,8 +76,11 @@ export const WithFiltrationAndControlsExample = ({
                     <TextInput
                         hasClear
                         placeholder="Type for search..."
-                        className={spacing({px: 2, py: 1})}
-                        style={{boxSizing: 'border-box'}}
+                        style={{
+                            boxSizing: 'border-box',
+                            paddingInline: 'var(--g-spacing-2)',
+                            paddingBlock: 'var(--g-spacing-1)',
+                        }}
                         autoComplete="off"
                         value={filterState.filter}
                         onUpdate={filterState.onFilterUpdate}
@@ -80,7 +89,7 @@ export const WithFiltrationAndControlsExample = ({
                 }
                 renderContainer={renderContainer}
                 slotAfterListBody={
-                    <Flex gap="2" className={spacing({px: 2, py: 1})}>
+                    <Flex gap="spacing-2" paddingInline="spacing-2" paddingBlock="spacing-1">
                         <Button
                             width="max"
                             onClick={() => {

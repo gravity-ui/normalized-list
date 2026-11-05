@@ -45,8 +45,8 @@ export const DefaultStory = ({itemsCount = 5, ...props}: DefaultStoryProps) => {
     });
 
     return (
-        <Flex gap={5}>
-            <Flex direction="column" gap={3}>
+        <Flex gap="spacing-5">
+            <Flex direction="column" gap="spacing-3">
                 <Text color="secondary">UIKitNormalizedList</Text>
                 <UIKitNormalizedList
                     {...props}
@@ -54,7 +54,7 @@ export const DefaultStory = ({itemsCount = 5, ...props}: DefaultStoryProps) => {
                     mapItemDataToContentProps={mapItemToContentProps}
                 />
             </Flex>
-            <Flex direction="column" gap={3}>
+            <Flex direction="column" gap="spacing-3">
                 <Text color="secondary">
                     List with `withExpandedState` false option in list state
                 </Text>

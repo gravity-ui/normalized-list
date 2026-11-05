@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import {FolderOpen} from '@gravity-ui/icons';
-import {Button, DropdownMenu, Flex, Icon} from '@gravity-ui/uikit';
+import {Button, Flex, Icon, Menu, MenuItem, MenuTrigger} from '@gravity-ui/uikit';
 
 import {useNormalizedList} from '../../../../components/useNormalizedList';
 import type {ListItemId} from '../../../../components/useNormalizedList';
@@ -63,26 +63,29 @@ export const WithItemLinksAndActionsStory = (props: WithItemLinksAndActionsStory
                                     selected={itemProps.selected}
                                     disabled={itemProps.disabled}
                                     endSlot={
-                                        <DropdownMenu
-                                            onSwitcherClick={(e) => {
-                                                e.stopPropagation();
-                                                e.preventDefault();
-                                            }}
-                                            items={[
-                                                {
-                                                    action: (e) => {
+                                        <Menu
+                                            trigger={
+                                                <MenuTrigger
+                                                    view="flat"
+                                                    aria-label={moreOptionsButton}
+                                                    onClick={(e) => {
                                                         e.stopPropagation();
-                                                        console.info(
-                                                            `Clicked by action with id: ${id}`,
-                                                        );
-                                                    },
-                                                    text: 'action 1',
-                                                },
-                                            ]}
-                                            defaultSwitcherProps={{
-                                                'aria-label': moreOptionsButton,
-                                            }}
-                                        />
+                                                        e.preventDefault();
+                                                    }}
+                                                />
+                                            }
+                                        >
+                                            <MenuItem
+                                                onClick={(e) => {
+                                                    e.stopPropagation();
+                                                    console.info(
+                                                        `Clicked by action with id: ${id}`,
+                                                    );
+                                                }}
+                                            >
+                                                action 1
+                                            </MenuItem>
+                                        </Menu>
                                     }
                                     startSlot={
                                         childrenIds ? (
@@ -115,11 +118,11 @@ export const WithItemLinksAndActionsStory = (props: WithItemLinksAndActionsStory
                                             </Button>
                                         ) : (
                                             <Flex
-                                                width={28}
+                                                width="28px"
                                                 justifyContent="center"
-                                                spacing={
+                                                marginInlineStart={
                                                     (itemProps.content.indentation || 0) > 0
-                                                        ? {ml: 1}
+                                                        ? 'spacing-1'
                                                         : undefined
                                                 }
                                             >

@@ -1,5 +1,7 @@
 'use client';
 
+import * as React from 'react';
+
 import {Popup} from '@gravity-ui/uikit';
 
 import {NormalizedSelectQa} from '../../components/NormalizedSelect/constants';
@@ -36,11 +38,17 @@ export const UIKitNormalizedSelectPopup = ({
     placement = DEFAULT_PLACEMENT,
     disablePortal,
 }: UIKitNormalizedSelectPopupProps) => {
+    const [anchorElement, setAnchorElement] = React.useState<HTMLElement | null>(null);
+
+    React.useEffect(() => {
+        setAnchorElement(anchorRef.current);
+    }, [anchorRef]);
+
     return (
         <Popup
             className={b(null, className)}
             qa={NormalizedSelectQa.POPUP}
-            anchorRef={anchorRef}
+            anchorElement={anchorElement}
             placement={placement}
             open={open}
             onOpenChange={(nextOpen) => {

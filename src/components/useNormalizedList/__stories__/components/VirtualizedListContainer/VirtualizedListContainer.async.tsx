@@ -14,7 +14,7 @@ export const VirtualizedListContainer = <T,>(props: ListContainerRenderProps<T>)
     return (
         <React.Suspense
             fallback={
-                <Flex direction="column" centerContent grow>
+                <Flex direction="column" alignItems="center" justifyContent="center" flexGrow>
                     <Loader size="l" />
                 </Flex>
             }
