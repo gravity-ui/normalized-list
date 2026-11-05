@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.0.0](https://github.com/gravity-ui/normalized-list/compare/v0.1.1...v1.0.0) (2026-11-05)
+
+
+### ⚠ BREAKING CHANGES
+
+* The /uikit entry now requires @gravity-ui/uikit ^8.0.0 and React 18 or 19.
+
+### Features
+
+* migrate UIKit presets to UIKit 8 ([#4](https://github.com/gravity-ui/normalized-list/issues/4)) ([8a17308](https://github.com/gravity-ui/normalized-list/commit/8a173089dc9c6c98dc1efe542cdd527ee81ccc43))
+
 ## [0.1.1](https://github.com/gravity-ui/normalized-list/compare/v0.1.0...v0.1.1) (2026-10-22)
 
 
